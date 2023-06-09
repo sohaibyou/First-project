@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animations</title>
+    <style>
+
+        body {
+
+             background-size: cover;
+            background-color: #212121;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column; /* on top of each other with button*/
+            gap: 20px
+        }
+        .back-video{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        h1{
+            color: #eee;
+            font-family: "Yu Gothic UI";
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease 0s; /* all:animate all content within the box*/
+            cursor: pointer;
+
+        }
+        h1:hover{
+            color:#d9480f;
+            transform: skew(3deg) scale(1.05);
+        }
+        button {
+            padding: 1.3em 3em;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 45px; /* soft edges for borders*/
+            box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.5); /* 0px(X direction) ,8px(Y direction) ,15px(blur underneath) */
+            transition: all 0.3s ease 0s; /* all:animate all content within the box*/
+            cursor: pointer;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #FFFFFF;
+            background-image: linear-gradient(-90deg, #edf536 0%, #FF0000 100%);
+
+            box-shadow: 0px 15px 20px #d9480f; /* 0px(X direction) ,15px(Y direction) ,20px(blur underneath) */
+            color: #fff;
+            transform: translateY(-7px); /* move the button in the Y direction */
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+        .input {
+            line-height: 28px;
+            border: 2px solid transparent;
+            border-bottom-color: #777;
+            padding: .2rem 0;
+            outline: none;
+            background-color: transparent;
+            color: #b91c1c;
+            transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        /* ::placeholder{
+          color: white;}*/
+
+        .input:focus, input:hover { /* focus animation remains when not hovering) */
+            outline: none;
+            padding: .2rem 1rem;
+            border-radius: 1rem;
+            border-color: rgba(217, 72, 15, 0.99);
+        }
+
+        .input::placeholder {
+            color: #777;
+        }
+
+        .input:focus::placeholder {
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Rocket Launcher👽</h1>
+<video autoplay loop muted playsinline class="back-video">
+    <source src="pexels-colin-jones-5921369-1920x1080-30fps.mp4" type="video/mp4">
+</video>
+<input placeholder="Enter The Passcode" type="text" class="input" required="">
+<button> Launch Rocket 🚀
+</button>
+</body>
+</html>
